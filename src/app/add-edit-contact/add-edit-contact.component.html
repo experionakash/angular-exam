@@ -38,7 +38,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success" type="submit" *ngIf="isNew" [disabled]="!f.valid" (click)="addNewContact(f.value,f)" >Add</button>
+        <button class="btn btn-success" type="button" *ngIf="isNew" [disabled]="!f.valid" (click)="addNewContact(f.value,f)" >Add</button>
         <a [routerLink]="['edit']" class="btn btn-success" *ngIf="isView" >Edit</a>
         <button class="btn btn-success" type="button" *ngIf="isEdit" [disabled]="!f.valid" (click)="onEditContact(f.value,f)">Save</button>
           <!--<button class="btn btn-danger" type="button" *ngIf="!isAdd" (click)="onDelete()" >Delete Item</button>-->

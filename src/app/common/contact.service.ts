@@ -5,12 +5,9 @@ import { Mycontact } from "./mycontact";
 @Injectable()
 export class ContactService {
 
-  private contacts: Mycontact[] = [new Mycontact('8156887372','akash','chandran','thikkodi'),
-                                   new Mycontact('9895158246','chandran','av','thikkodi'),
-                                   new Mycontact('9895558246','dilshaN','na','thikkodi'),
-                                   new Mycontact('9895158246','charles','dddd','thikkodi'),
-                                   new Mycontact('9895158246','vysakh','aab','thikkodi'),
-                                   new Mycontact('9895158246','bbbbbb','ccc','thikkodi')];
+  private contacts: Mycontact[] = [];//new Mycontact('8156887372','akash','chandran','thikkodi'),
+                                  //  new Mycontact('9895158246','chandran','av','thikkodi')
+                                  //  ];
 
   constructor() { }
   
