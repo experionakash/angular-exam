@@ -18,7 +18,7 @@ export class SearchPipe implements PipeTransform {
       }
     else{
       for(let item of value){
-        if(item.firstName.match('^'+args[0]+'.*$')){
+        if(item.firstName.match('^'+args+'.*$')){
           resultArray.push(item); 
         }
       }
