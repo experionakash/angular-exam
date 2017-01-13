@@ -30,11 +30,11 @@
     </div>
     <div class="row form-group">
       <label for="addrss">address</label>
-      <input type="textarea" rows="3" id="address" class="form-control"
+      <textarea  rows="3" id="address" class="form-control"
              [ngModel]="selectedContact?.address"
              name="address"
              required
-             [disabled]="isView">
+             [disabled]="isView"> </textarea>
     </div>
     <div class="row">
       <div class="col-xs-12">
