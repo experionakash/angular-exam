@@ -1,0 +1,18 @@
+
+<div class="row" id="mylistdiv">
+  <div class="col-xs-12">
+    
+    <input type="text" #s (keyup)="0" class="text-box" placeholder="Enter search text">
+     <i class="glyphicon glyphicon-search"></i>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12" id="contact-list">
+    <ul class="list-group">
+      
+      <app-contact-item *ngFor="let item of contacts | search:s.value ; let i = index" [contact]="item" [contactId]="i" ></app-contact-item>
+    </ul>
+  </div>
+</div>
+
+

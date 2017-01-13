@@ -1,0 +1,49 @@
+
+<div class="row " id="myformdiv">
+  <form id="contactform" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+    <div class="row form-group">
+      <label for="phone-number">Phone number</label>
+      <input type="text" id="phonenumber" required class="form-control"
+              [ngModel]="selectedContact?.number"
+               
+              pattern="(?:\s+|)((0|(?:(\+|)91))(?:\s|-)*(?:(?:\d(?:\s|-)*\d{9})|(?:\d{2}(?:\s|-)*\d{8})|(?:\d{3}(?:\s|-)*\d{7}))|\d{10})(?:\s+|)"
+              name="number"
+              [disabled]="isView">
+    </div>
+    <div class="row form-group">
+      <div class="col-md-6">
+        <label for="first-name">first name</label>
+        <input type="text" id="firstname" required class="form-control"
+              [ngModel]="selectedContact?.firstName"
+              name="firstName"
+              maxlength="50"
+              [disabled]="isView">
+      </div>
+      <div class="col-md-6">
+        <label for="last-name">last name</label>
+        <input type="text" id="lastname" required class="form-control"
+              [ngModel]="selectedContact?.lastName"
+              name="lastName"
+              maxlength="50"
+              [disabled]="isView">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="addrss">address</label>
+      <input type="textarea" rows="3" id="address" class="form-control"
+             [ngModel]="selectedContact?.address"
+             name="address"
+             required
+             [disabled]="isView">
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" type="submit" *ngIf="isNew" [disabled]="!f.valid" (click)="addNewContact(f.value,f)" >Add</button>
+        <a [routerLink]="['edit']" class="btn btn-success" *ngIf="isView" >Edit</a>
+        <button class="btn btn-success" type="button" *ngIf="isEdit" [disabled]="!f.valid" (click)="onEditContact(f.value,f)">Save</button>
+          <!--<button class="btn btn-danger" type="button" *ngIf="!isAdd" (click)="onDelete()" >Delete Item</button>-->
+          <button class="btn btn-primary" type="reset" *ngIf="isEdit || isNew" >Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
